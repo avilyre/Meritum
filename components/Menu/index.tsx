@@ -5,16 +5,16 @@ import {
   ItemContainer,
   Item,
   Container,
-  MenuIcon,
-  MenuButtonContainer
+  ToggleMenuIcon,
+  ToggleMenuButtonContainer
 } from "./styles";
 
 export function Menu(): JSX.Element {
   return (
     <Container>
-      <MenuButtonContainer>
-        <MenuIcon />
-      </MenuButtonContainer>
+      <ToggleMenuButtonContainer>
+        <ToggleMenuIcon />
+      </ToggleMenuButtonContainer>
 
       <MenuContainer>
         <ItemContainer>

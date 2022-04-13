@@ -5,7 +5,7 @@ import breakpoints from "../../constants/breakpoints";
 
 export const Container = styled.ul``;
 
-export const MenuButtonContainer = styled.button`
+export const ToggleMenuButtonContainer = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,7 @@ export const MenuButtonContainer = styled.button`
   }
 `;
 
-export const MenuIcon = styled(FiMenu)`
+export const ToggleMenuIcon = styled(FiMenu)`
   font-size: 1rem;
 `;
 
