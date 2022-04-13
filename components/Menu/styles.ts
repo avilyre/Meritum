@@ -1,25 +1,36 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import breakpoints from "../../constants/breakpoints";
+import { MenuContainerProps, OverlayProps } from "./interface";
 
 export const Container = styled.div``;
 
-export const MenuContainer = styled.div`
+export const MenuContainer = styled.div<MenuContainerProps>`
   & {
     li + li {
       margin-left: 1rem;
     }
   }
 
-  @media (max-width: ${breakpoints.mediumScreen}px) {
-    display: none;
+  white-space: nowrap;
 
+  @media (max-width: ${breakpoints.mediumScreen}px) {
     position: fixed;
     top: 0;
-    right: 0;
+
+
+    ${({ isVisible }) => isVisible ?
+    css`
+      right: 0%;
+    `:
+    css`
+      right: -100%;
+    `}
 
     height: 100%;
     padding: 0.5rem 0 0 0.5rem;
+
+    transition: 1s;
 
     background: ${({ theme }) => theme.colors.shape};
 
@@ -63,19 +74,29 @@ export const Item = styled.a`
   @media (max-width: ${breakpoints.mediumScreen}px) {
     display: block;
     border-radius: 30px 0 0 30px;
-
   }
 `;
 
-export const Overlay = styled.div`
-  display: none;
-
+export const Overlay = styled.button<OverlayProps>`
   position: fixed;
   top: 0;
-  left: 0;
+
+  ${({ isVisible }) => isVisible ?
+  css`
+    left: 0%;
+    opacity: 1;
+  `:
+  css`
+    left: 100%;
+    opacity: 0;
+  `}
 
   height: 100%;
   width: 100%;
+
+  border: none;
+
+  transition: 0.5s;
 
   background: rgba(0, 0, 0, 0.2);
 

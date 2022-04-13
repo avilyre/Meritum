@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { ToggleMenuButton } from "./components/ToggleButton";
 
@@ -11,12 +11,23 @@ import {
 } from "./styles";
 
 export function Menu(): JSX.Element {
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
+
+  function handleToggleMenu() {
+    setIsMenuOpened(!isMenuOpened);
+  }
+
   return (
     <Container>
-      <ToggleMenuButton />
-      <Overlay />
+      <ToggleMenuButton
+        onClick={handleToggleMenu}
+      />
+      <Overlay
+        onClick={handleToggleMenu}
+        isVisible={isMenuOpened}
+      />
 
-      <MenuContainer>
+      <MenuContainer isVisible={isMenuOpened}>
         <ItemContainer>
           <Item href="/">Treinamentos</Item>
         </ItemContainer>
