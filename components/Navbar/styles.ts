@@ -20,4 +20,7 @@ export const Title = styled.h1`
   font-weight: 500;
   font-size: 1.3rem;
   color: ${({ theme }) => theme.colors.primary};
+
+  display: flex;
+  align-items: center;
 `;
