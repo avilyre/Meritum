@@ -1,12 +1,10 @@
 import type { NextPage } from 'next'
 
-import { Container } from '../styles/pages/home';
+import { Navbar } from '../components/Navbar';
 
 const Home: NextPage = () => {
   return (
-    <Container>
-      <h1>Meritum</h1>
-    </Container>
+    <Navbar />
   );
 }
 
