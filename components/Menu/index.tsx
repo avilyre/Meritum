@@ -1,20 +1,20 @@
 import React from "react";
 
+import { ToggleMenuButton } from "./components/ToggleButton";
+
 import {
   MenuContainer,
   ItemContainer,
   Item,
   Container,
-  ToggleMenuIcon,
-  ToggleMenuButtonContainer
+  Overlay,
 } from "./styles";
 
 export function Menu(): JSX.Element {
   return (
     <Container>
-      <ToggleMenuButtonContainer>
-        <ToggleMenuIcon />
-      </ToggleMenuButtonContainer>
+      <ToggleMenuButton />
+      <Overlay />
 
       <MenuContainer>
         <ItemContainer>

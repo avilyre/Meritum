@@ -1,41 +1,34 @@
 import styled from "styled-components";
-import { FiMenu } from "react-icons/fi";
 
 import breakpoints from "../../constants/breakpoints";
 
-export const Container = styled.ul``;
-
-export const ToggleMenuButtonContainer = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  padding: 0.8rem;
-  border-radius: 50%;
-  border: none;
-
-  color: ${({ theme }) => theme.colors.primary};
-  background: ${({ theme }) => theme.colors.background};
-
-  transition: 0.2s;
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.shape};
-    background: ${({ theme }) => theme.colors.primary};
-  }
-
-  @media (min-width: ${breakpoints.mediumScreen}px) {
-    display: none;
-  }
-`;
-
-export const ToggleMenuIcon = styled(FiMenu)`
-  font-size: 1rem;
-`;
+export const Container = styled.div``;
 
 export const MenuContainer = styled.div`
+  & {
+    li + li {
+      margin-left: 1rem;
+    }
+  }
+
   @media (max-width: ${breakpoints.mediumScreen}px) {
     display: none;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    height: 100%;
+    padding: 0.5rem 0 0 0.5rem;
+
+    background: ${({ theme }) => theme.colors.shape};
+
+    & {
+      li + li {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    }
   }
 `;
 
@@ -56,6 +49,7 @@ export const Item = styled.a`
   font-weight: 500;
   text-decoration: none;
 
+  border-radius: 4px;
   padding: 1rem;
 
   transition: 0.2s;
@@ -63,12 +57,29 @@ export const Item = styled.a`
   &:hover {
     color: ${({ theme }) => theme.colors.shape};
 
-    border-radius: 30px;
-
     background: ${({ theme }) => theme.colors.primary};
   }
 
   @media (max-width: ${breakpoints.mediumScreen}px) {
     display: block;
+    border-radius: 30px 0 0 30px;
+
+  }
+`;
+
+export const Overlay = styled.div`
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+
+  @media (min-width: ${breakpoints.mediumScreen}px) {
+    display: none;
   }
 `;
