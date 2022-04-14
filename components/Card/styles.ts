@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import breakpoints from "../../constants/breakpoints";
+
 export const Container = styled.button`
   display: flex;
   flex-direction: column;
@@ -17,6 +19,10 @@ export const Container = styled.button`
   text-decoration: none;
 
   background: ${({ theme }) => theme.colors.shape};
+
+  @media (max-width: ${breakpoints.xSmallScreen}px) {
+    max-width: 100%;
+  }
 `;
 
 export const IconContainer = styled.div`

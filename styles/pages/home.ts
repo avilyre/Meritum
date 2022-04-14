@@ -66,4 +66,8 @@ export const CardsList = styled.div`
   @media (max-width: ${breakpoints.smallScreen}px) {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  @media (max-width: ${breakpoints.xSmallScreen}px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
