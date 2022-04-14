@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { CounterIndicator } from "./components/CounterIndicator";
 
 import { ToggleMenuButton } from "./components/ToggleButton";
 
@@ -29,19 +30,32 @@ export function Menu(): JSX.Element {
 
       <MenuContainer isVisible={isMenuOpened}>
         <ItemContainer>
-          <Item href="/">Treinamentos</Item>
+          <Item href="/">
+            Treinamentos
+            <CounterIndicator amount={2} enableMarginLeft />
+          </Item>
         </ItemContainer>
+
         <ItemContainer>
-          <Item href="/">Declarações</Item>
+          <Item href="/">
+            Declarações
+            <CounterIndicator amount={6} enableMarginLeft />
+          </Item>
         </ItemContainer>
+
         <ItemContainer>
           <Item href="/">Doação e Patrocínio</Item>
         </ItemContainer>
+        
         <ItemContainer>
           <Item href="/">Interação com Concorrentes</Item>
         </ItemContainer>
+
         <ItemContainer>
-          <Item href="/">Outros</Item>
+          <Item href="/">
+            Outros
+            <CounterIndicator amount={4} enableMarginLeft />
+          </Item>
         </ItemContainer>
       </MenuContainer>
     </Container>

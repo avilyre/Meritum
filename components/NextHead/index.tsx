@@ -1,8 +1,8 @@
 import Head from "next/head";
 
-import { HeadProps } from "./interface";
+import { NextHeadProps } from "./interface";
 
-export function CustomHead({ title }: HeadProps): JSX.Element {
+export function NextHead({ title }: NextHeadProps): JSX.Element {
   return (
     <Head>
       <title>

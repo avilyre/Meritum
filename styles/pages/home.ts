@@ -30,5 +30,7 @@ export const HeroTitle = styled.h2`
 `;
 
 export const CenteredContainer = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 2rem;
 `;

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 
-import { CustomHead } from '../components/CustomHead';
+import { NextHead } from '../components/NextHead';
 import { Navbar } from '../components/Navbar';
 
 import {
@@ -9,12 +9,14 @@ import {
   HeroTitle,
   CenteredContainer
 } from '../styles/pages/home';
+import { Header } from '../components/Header';
 
 const Home: NextPage = () => {
   return (
     <Container>
-      <CustomHead title="Início" />
-      <Navbar />
+      <Header>
+        <Navbar />
+      </Header>
 
       <HeroContainer>
         <CenteredContainer>
